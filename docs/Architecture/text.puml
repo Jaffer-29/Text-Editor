@@ -1,0 +1,192 @@
+@startuml
+
+' =====================================================
+' MODERN CREAM UI - REFINED GITHUB VERSION
+' =====================================================
+
+!theme plain
+
+skinparam backgroundColor #F1E9E2
+skinparam shadowing true
+skinparam roundcorner 22
+skinparam dpi 180
+
+' =====================================================
+' GLOBAL FONT
+' =====================================================
+
+skinparam defaultFontName "Segoe UI"
+skinparam defaultFontSize 14
+skinparam defaultFontColor #2F2F2F
+
+' =====================================================
+' TITLE
+' =====================================================
+
+skinparam title {
+    FontColor #5A3E2B
+    FontSize 26
+    FontStyle bold
+}
+
+title ✨ Personal Text Editor - Clean Architecture UML
+
+' =====================================================
+' PACKAGE STYLE (SIMPLIFIED FOR CLARITY)
+' =====================================================
+
+skinparam package {
+    BackgroundColor #E7D8C9
+    BorderColor #A47148
+    FontColor #3E2C23
+    FontSize 16
+    BorderThickness 2
+}
+
+skinparam packageStyle rectangle
+
+' =====================================================
+' CLASS STYLE (MORE CONTRAST FOR READABILITY)
+' =====================================================
+
+skinparam class {
+    BackgroundColor #FFF8F1
+    BorderColor #8B5E3C
+    FontColor #2F2F2F
+    AttributeFontColor #4A4A4A
+    MethodFontColor #5A5A5A
+    FontSize 14
+    BorderThickness 2
+}
+
+' =====================================================
+' NOTES STYLE (SOFT BUT CLEAR)
+' =====================================================
+
+skinparam note {
+    BackgroundColor #FFF1E6
+    BorderColor #C08457
+    FontColor #3E2C23
+    FontSize 13
+}
+
+' =====================================================
+' ARROWS (SUBTLE PROFESSIONAL TONE)
+' =====================================================
+
+skinparam ArrowThickness 2
+skinparam ArrowColor #7A5C58
+skinparam ArrowFontColor #5A4A42
+
+' =====================================================
+' TITLE
+' =====================================================
+
+title ✨ Personal Text Editor - Swing UML Architecture
+
+' =====================================================
+' PACKAGES
+' =====================================================
+
+package "🚀 Application Entry" {
+
+    class RunFrame <<Main>> {
+        + main(String[] args)
+    }
+}
+
+package "🖥️ GUI Core" {
+
+    class textEditor <<JFrame>> {
+
+        -- Core Data Structures --
+        - Stack<String> undoStack
+        - Stack<String> redoStack
+
+        -- UI Components --
+        - JButton save
+        - JButton undo
+        - JButton redo
+        - JButton clear
+
+        - JTextArea area
+
+        - JComboBox<String> fontBox
+        - JComboBox<Integer> fontSize
+
+        - JLabel label
+        - JLabel StyleLabel
+        - JLabel SizeLabel
+
+        -- Data --
+        - String[] fontStyles
+        - Integer[] fontSizes
+
+        -- Constructor --
+        + textEditor()
+    }
+}
+
+package "⚙️ Swing Library" {
+
+    class JFrame
+    class JButton
+    class JTextArea
+    class JComboBox
+    class JLabel
+    class Stack
+}
+
+' =====================================================
+' RELATIONSHIPS
+' =====================================================
+
+RunFrame --> textEditor : launches GUI
+
+textEditor --|> JFrame
+
+textEditor --> JButton : UI actions
+textEditor --> JTextArea : text input
+textEditor --> JComboBox : font controls
+textEditor --> JLabel : UI labels
+textEditor --> Stack : undo/redo history
+
+' =====================================================
+' NOTES
+' =====================================================
+
+note right of textEditor
+✨ Features Implemented
+
+• Undo / Redo using Stack
+• Font Family Selection
+• Font Size Control
+• Save to Text File
+• Clear Text Area
+• Dark Theme UI
+• Keyboard-based state tracking
+end note
+
+note bottom of RunFrame
+⚙ Execution Flow
+
+Entry Point:
+RunFrame.main()
+
+GUI launches on Event Dispatch Thread
+(using Swing best practices)
+end note
+
+' =====================================================
+' LEGEND
+' =====================================================
+
+legend bottom
+|= Element |= Meaning |
+|<#FFF8F1>| Classes |
+|<#E7D8C9>| Packages |
+|<#7A5C58>| Relationships |
+|<#FFF1E6>| Notes |
+endlegend
+
+@enduml
