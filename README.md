@@ -53,7 +53,7 @@ The editor allows users to type and manage text efficiently, customize appearanc
 The UML diagram below represents the structure, components, and relationships of the application. It was created using PlantUML to clearly show class responsibilities and Swing dependencies.
 
 ```markdown id="umlimg"
-![UML Class Diagram](https://github.com/Jaffer-29/Text-Editor/blob/main/docs/Architecture/text.png?raw=true)
+![UML Class Diagram](docs/Architecture/text.png)
 ```
 
 ---
